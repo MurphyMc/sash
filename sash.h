@@ -60,6 +60,7 @@ typedef	int	BOOL;
  */
 extern	int	do_alias(int argc, const char ** argv);
 extern	int	do_aliasall(int argc, const char ** argv);
+extern	int	do_cat(int argc, const char ** argv);
 extern	int	do_cd(int argc, const char ** argv);
 extern	int	do_exec(int argc, const char ** argv);
 extern	int	do_exit(int argc, const char ** argv);

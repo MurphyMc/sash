@@ -79,6 +79,39 @@ do_pwd(int argc, const char ** argv)
 
 
 int
+do_cat(int argc, const char ** argv)
+{
+	int	i;
+	int	fd;
+	char	buf[1024];
+	ssize_t	sz;
+
+	for (i = 1; i < argc; i++)
+	{
+		fd = open(argv[i], O_RDONLY);
+		if (fd < 0)
+		{
+			perror(argv[i]);
+
+			return 1;
+		}
+		while (1)
+		{
+			sz = read(fd, buf, sizeof(buf));
+			if (sz <= 0)
+			{
+				close(fd);
+				break;
+			}
+			write(STDOUT, buf, sz);
+		}
+	}
+
+	return 0;
+}
+
+
+int
 do_cd(int argc, const char ** argv)
 {
 	const char *	path;

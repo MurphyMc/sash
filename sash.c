@@ -64,6 +64,12 @@ static const CommandEntry	commandEntryTable[] =
 	},
 
 	{
+		"-cat",		do_cat,		1,	INFINITE_ARGS,
+		"Concatenate files",
+		"fileName ..."
+	},
+
+	{
 		"cd",		do_cd,		1,	2,
 		"Change current directory",
 		"[dirName]"
