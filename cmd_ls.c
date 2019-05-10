@@ -83,7 +83,7 @@ do_ls(int argc, const char ** argv)
 	struct dirent *	dp;
 	char		fullName[PATH_LEN];
 	struct	stat	statBuf;
-	int		r;
+	int		r = 0;
 
 	static const char *	def[] = {"."};
 
